@@ -459,6 +459,12 @@ strong {
   cursor: pointer;
 }
 
+.center-row {
+  flex: auto;
+  justify-content: center;
+  justify-items: center;
+}
+
 @media only screen and (max-width: 768px) {
   .main-navigation .navbar-nav li a {
     padding: 10px 15px;
@@ -2065,29 +2071,17 @@ textarea:focus:-moz-placeholder {
 
 /* 26. social icons */
 .social-icons {
-  position: relative;
+
   font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.05em;
   font-style: normal;
   text-transform: uppercase;
   text-align: center;
   color: #fff;
-  margin: 10px auto 0 -30px;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: all 1.5s ease;
-  -moz-transition: all 1.5s ease;
-  -ms-transition: all 1.5s ease;
-  -o-transition: all 1.5s ease;
-  transition: all 1.5s ease;
+
+
 }
 
 .social-icons a,
@@ -2108,7 +2102,7 @@ textarea:focus:-moz-placeholder {
 .social-icons li a:active,
 .social-icons li a:focus {
   font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.05em;
   font-style: normal;
@@ -3413,6 +3407,7 @@ textarea:focus:-moz-placeholder {
   width: 100%;
 }
 
+/* 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
   .column {
