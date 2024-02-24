@@ -761,7 +761,35 @@ h2.section-subheading {
   backface-visibility: hidden;
 }
 
+h2.section-subheading2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #ff264a;
+  margin: -5px auto -7px auto;
+  line-height: 2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 h2.section-subheading span {
+  position: relative;
+  display: inline-block;
+  padding-right: 60px;
+  line-height: 1;
+}
+
+h2.section-subheading2 span {
   position: relative;
   display: inline-block;
   padding-right: 60px;
@@ -774,16 +802,55 @@ h2.section-subheading span {
   }
 }
 
-h2.section-subheading span::before {
+@media only screen and (max-width: 768px) {
+  h2.section-subheading2 span {
+    padding-right: 30px;
+  }
+}
+
+h2.section-subheading2 span::before {
+  left: -50px;
+  /* Adjust the position as needed */
+}
+
+h2.section-subheading2 span::after {
+  right: -50px;
+  /* Adjust the position as needed */
+}
+
+h2.section-subheading2 span {
+  padding: 0 10px;
+  /* Adjust the padding as needed */
+}
+
+h2.section-subheading2 span::before,
+h2.section-subheading2 span::after {
   content: "";
   position: absolute;
   display: block;
   top: 50%;
-  right: 0;
   width: 40px;
   height: 0;
   margin-top: 0;
   border-top: 1px solid #ff264a;
+}
+
+h2.section-subheading span::before {
+  content: "";
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 50%;
+  width: 40px;
+  height: 0;
+  margin-top: 0;
+  border-top: 1px solid #ff264a;
+}
+
+@media only screen and (max-width: 768px) {
+  h2.section-subheadin2 span::before {
+    width: 20px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
