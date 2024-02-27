@@ -13,7 +13,7 @@
   1. preloader
   2. navigation
     2.1. close mobile menu
-	2.2. collapse navigation
+    2.2. collapse navigation
   3. animate elements
   4. hide on scroll
   5. to top arrow + NAV
@@ -100,11 +100,11 @@ $(function () {
             },
             768: {
                 items: 2,
-				margin: 50
+                margin: 50
             },
             980: {
                 items: 2,
-				margin: 50
+                margin: 50
             },
             1240: {
                 items: 3,
@@ -120,10 +120,18 @@ $(function () {
             type: "image",
             gallery: {
                 enabled: true
+            }, callbacks: {
+                beforeOpen: function () {
+                    // just a hack that adds mfp-anim class to markup 
+                    this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+                    this.st.mainClass = this.st.el.attr('data-effect');
+                }
             },
             removalDelay: 100,
-            mainClass: "mfp-fade",
-            fixedContentPos: false
+            mainClass: "mfp-zoom-in",
+            fixedContentPos: false,
+            closeOnContentClick: false,
+            midClick: false
         });
     });
 
@@ -135,8 +143,8 @@ $(function () {
         }, 1500, 'easeInOutExpo');
         e.preventDefault();
     });
-	
-	// 9. YouTube player
+
+    // 9. YouTube player
     $("#bgndVideo").YTPlayer();
 
     // 10. contact form
@@ -144,14 +152,14 @@ $(function () {
         $("form#form .error").remove();
         var s = !1;
         if ($(".requiredField").each(function () {
-                if ("" === jQuery.trim($(this).val())) $(this).prev("label").text(), $(this).parent().append('<span class="error">This field is required</span>'), $(this).addClass(
-                    "inputError"), s = !0;
-                else if ($(this).hasClass("email")) {
-                    var r = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-                    r.test(jQuery.trim($(this).val())) || ($(this).prev("label").text(), $(this).parent().append('<span class="error">Invalid email address</span>'), $(this).addClass(
-                        "inputError"), s = !0);
-                }
-            }), !s) {
+            if ("" === jQuery.trim($(this).val())) $(this).prev("label").text(), $(this).parent().append('<span class="error">This field is required</span>'), $(this).addClass(
+                "inputError"), s = !0;
+            else if ($(this).hasClass("email")) {
+                var r = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                r.test(jQuery.trim($(this).val())) || ($(this).prev("label").text(), $(this).parent().append('<span class="error">Invalid email address</span>'), $(this).addClass(
+                    "inputError"), s = !0);
+            }
+        }), !s) {
             $("form#form input.submit").fadeOut("normal", function () {
                 $(this).parent().append("");
             });
