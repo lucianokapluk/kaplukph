@@ -402,11 +402,11 @@ strong {
 }
 
 .logo {
-  -webkit-transition: all .7s;
-  -moz-transition: all .7s;
-  -ms-transition: all .7s;
-  -o-transition: all .7s;
-  transition: all .7s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
 }
 
 .logo .logo-icon,
@@ -579,6 +579,24 @@ strong {
   }
 }
 
+.letterCircle {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  padding-right: 7px;
+
+
+  border: 1.9px solid #000000;
+  color: #000000;
+  text-align: center;
+  font: 19px amalfiCoast, sans-serif;
+
+}
+
+@font-face {
+  font-family: amalfiCoast;
+  src: url(./font/amalfi-coast.ttf);
+}
 
 /* elements home call */
 .logo {
